@@ -15,6 +15,7 @@ const TagsContent = () => {
   return (
     <div>
       <TableContainer sx={{ padding: { xs: 1, sm: 0 } }}>
+        
         <Table aria-label="simple table">
           <TableHeadElem />
           <TableBodyElem />

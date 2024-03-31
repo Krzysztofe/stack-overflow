@@ -7,7 +7,7 @@ import TableHeadElem from "./TableHeadElem";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTags } from "../../services/fetchTags";
 import { URL_tags } from "../../data/dataURL";
-import TableRowElem from "./TAbleRowElem";
+import TableRowElem from "./TableRowElem";
 
 type TagsData = {
   items: {
@@ -16,9 +16,9 @@ type TagsData = {
   }[];
 };
 
-const tagsToPrint:{
-    tags: string[];
-    counts: number;
+const tagsToPrint: {
+  tags: string[];
+  counts: number | string;
 }[] = [
   {
     tags: ["javascript", "node.js", "prisma"],
@@ -36,28 +36,30 @@ const tagsToPrint:{
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
   },
+  {
+    tags: ["Brak danych"],
+    counts: "Brak danych",
+  },
 ];
 
-
-
 const TableBodyElem = () => {
-//   const { data: tags } = useQuery<TagsData>({
-//     queryFn: () => fetchTags(URL_tags),
-//     queryKey: ["tags"],
-//     staleTime: Infinity,
-//   });
+  //   const { data: tags } = useQuery<TagsData>({
+  //     queryFn: () => fetchTags(URL_tags),
+  //     queryKey: ["tags"],
+  //     staleTime: Infinity,
+  //   });
 
-//   const tagsToPrint = tags?.items.map(({ tags, view_count }) => {
-//     const formattedTags = tags.length === 0 ? ["Brak danych"] : tags;
-//     const formattedCount = view_count ? view_count : "Brak danych";
-//     return { tags: formattedTags, counts: formattedCount };
-//   });
+  //   const tagsToPrint = tags?.items.map(({ tags, view_count }) => {
+  //     const formattedTags = tags.length === 0 ? ["Brak danych"] : tags;
+  //     const formattedCount = view_count ? view_count : "Brak danych";
+  //     return { tags: formattedTags, counts: formattedCount };
+  //   });
 
-//   console.log("www", tagsToPrint);
+  //   console.log("www", tagsToPrint);
   return (
     <TableBody>
-      {tagsToPrint.map(({ tags, counts }) => {
-        return <TableRowElem/>;
+      {tagsToPrint.map((tagData, idx) => {
+        return <TableRowElem key={Math.random()} tagData={tagData} idx={idx} />;
       })}
     </TableBody>
   );
