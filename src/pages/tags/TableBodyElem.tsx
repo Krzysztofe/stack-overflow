@@ -7,23 +7,37 @@ import TableHeadElem from "./TableHeadElem";
 import { useQuery } from "@tanstack/react-query";
 import { fetchTags } from "../../services/fetchTags";
 import { URL_tags } from "../../data/dataURL";
-
+import TableRowElem from "./TAbleRowElem";
 
 type TagsData = {
   items: {
-    tags: any[]; 
-    view_count: number
+    tags: any[];
+    view_count: number;
   }[];
 };
 
-const tagi = [
-  ["javascript", "node.js", "prisma"],
-  ["lua", "fivem"],
-  ["android", "android-studio", "github"],
-  ["c++", "sfml", "trigonometry"],
+const tagsToPrint:{
+    tags: string[];
+    counts: number;
+}[] = [
+  {
+    tags: ["javascript", "node.js", "prisma"],
+    counts: 22,
+  },
+  {
+    tags: ["lua", "fivem"],
+    counts: 22,
+  },
+  {
+    tags: ["android", "android-studio", "github"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
 ];
 
-const county = [21, 2, 63, 1542]
 
 
 const TableBodyElem = () => {
@@ -33,17 +47,20 @@ const TableBodyElem = () => {
 //     staleTime: Infinity,
 //   });
 
-//   const tagsToPrint = tags?.items.map(({ tags }) => {
-//     return tags;
+//   const tagsToPrint = tags?.items.map(({ tags, view_count }) => {
+//     const formattedTags = tags.length === 0 ? ["Brak danych"] : tags;
+//     const formattedCount = view_count ? view_count : "Brak danych";
+//     return { tags: formattedTags, counts: formattedCount };
 //   });
 
-//   const countsToPrint = tags?.items.map(({ view_count }) => {
-//     return view_count;
-//   });
-
-//   console.log("www", countsToPrint);
-
-  return <TableBody></TableBody>;
+//   console.log("www", tagsToPrint);
+  return (
+    <TableBody>
+      {tagsToPrint.map(({ tags, counts }) => {
+        return <TableRowElem/>;
+      })}
+    </TableBody>
+  );
 };
 
 export default TableBodyElem;

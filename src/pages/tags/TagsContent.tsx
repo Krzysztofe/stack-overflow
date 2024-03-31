@@ -12,18 +12,12 @@ import TableHeadElem from "./TableHeadElem";
 import TableBodyElem from "./TableBodyElem";
 
 const TagsContent = () => {
-  //   const { data: tags } = useQuery({
-  //     queryFn: () => fetchTags(URL_tags),
-  //     queryKey: ["tags"],
-  //     staleTime: Infinity,
-  //   });
-
   return (
     <div>
       <TableContainer sx={{ padding: { xs: 1, sm: 0 } }}>
         <Table aria-label="simple table">
           <TableHeadElem />
-          <TableBodyElem/>
+          <TableBodyElem />
         </Table>
       </TableContainer>
     </div>
