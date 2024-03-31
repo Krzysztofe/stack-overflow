@@ -1,4 +1,5 @@
 import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
 
 const ErrorPage = () => {
   return (
@@ -7,7 +8,11 @@ const ErrorPage = () => {
       justifyContent="center"
       alignItems="center"
       style={{ height: "100vh" }}
-    > Zły adres </Grid>
+    >
+      <Box sx={{ textAlign: "center" }}>
+        Błąd 404 <br /> Szukana strona nie istnieje
+      </Box>
+    </Grid>
   );
 };
 
