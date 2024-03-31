@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchTags } from "../../services/fetchTags";
 import { URL_tags } from "../../data/dataURL";
 import TableRowElem from "./TableRowElem";
-import useTagsTableStore from "../../zustandStores/useTagsTableStore";
+import usePaginationStore from "../../zustandStores/usePaginationStore";
 
 type TagsData = {
   items: {
@@ -80,8 +80,8 @@ export const tagsToPrint: {
 ];
 
 const TableBodyElem = () => {
-  const page = useTagsTableStore(state => state.page);
-  const rowsPerPage = useTagsTableStore(state => state.rowsPerPage);
+  const page = usePaginationStore(state => state.page);
+  const rowsPerPage = usePaginationStore(state => state.rowsPerPage);
 
   const displayedTags = tagsToPrint?.slice(
     page * rowsPerPage,

@@ -12,7 +12,7 @@ type ModelStore = {
   ) => void;
 };
 
-const useTagsTableStore = create<ModelStore>(set => ({
+const usePaginationStore = create<ModelStore>(set => ({
   page: 0,
   rowsPerPage: 5,
   setRowsPerPage: event => {
@@ -23,4 +23,4 @@ const useTagsTableStore = create<ModelStore>(set => ({
   },
 }));
 
-export default useTagsTableStore;
+export default usePaginationStore;

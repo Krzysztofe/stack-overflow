@@ -1,8 +1,7 @@
 import TablePagination from "@mui/material/TablePagination";
 import Typography from "@mui/material/Typography";
-import { useState } from "react";
 import { tagsToPrint } from "./TableBodyElem";
-import useTagsTableStore from "../../zustandStores/useTagsTableStore";
+import usePaginationStore from "../../zustandStores/usePaginationStore";
 
 type ModelRowsParams = {
   from: number;
@@ -11,10 +10,10 @@ type ModelRowsParams = {
 };
 
 const TablePaginationElem = () => {
-  const page = useTagsTableStore(state => state.page);
-  const rowsPerPage = useTagsTableStore(state => state.rowsPerPage);
-  const setPage = useTagsTableStore(state => state.setPage);
-  const setRowsPerPage = useTagsTableStore(state => state.setRowsPerPage);
+  const page = usePaginationStore(state => state.page);
+  const rowsPerPage = usePaginationStore(state => state.rowsPerPage);
+  const setPage = usePaginationStore(state => state.setPage);
+  const setRowsPerPage = usePaginationStore(state => state.setRowsPerPage);
 
   const defaultLabelDisplayedRows = ({ from, to, count }: ModelRowsParams) => {
     return (
