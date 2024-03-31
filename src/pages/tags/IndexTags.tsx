@@ -6,18 +6,18 @@ import LoadingPage from "../LodingPage";
 import TagsContent from "./TagsContent";
 
 const IndexTags = () => {
-  const { isLoading, error } = useQuery({
-    queryFn: () => fetchTags(URL_tags),
-    queryKey: ["tags"],
-    staleTime: Infinity,
-  });
+//   const { isLoading, error } = useQuery({
+//     queryFn: () => fetchTags(URL_tags),
+//     queryKey: ["tags"],
+//     staleTime: Infinity,
+//   });
 
-  if (isLoading) {
-    return <LoadingPage />;
-  }
-  if (error) {
-    return <HttpError errorMsg={error} />;
-  }
+//   if (isLoading) {
+//     return <LoadingPage />;
+//   }
+//   if (error) {
+//     return <HttpError errorMsg={error} />;
+//   }
 
   return <TagsContent />;
 };
