@@ -4,6 +4,8 @@ type ModelStore = {
   tags: any;
 
   setTags: (event: any) => void;
+  sortTags: () => void;
+  checkTags: (idx:number) => void;
 };
 
 const useTagsListStore = create<ModelStore>(set => ({
@@ -11,6 +13,17 @@ const useTagsListStore = create<ModelStore>(set => ({
 
   setTags: event => {
     set(state => ({ tags: event }));
+  },
+
+  sortTags: () => {
+    set(state => ({ tags: state.tags.slice().reverse() }));
+  },
+  checkTags: idx => {
+    set(state => ({
+      tags: state.tags.map((tag: any, index: any) =>
+        index === idx ? { ...tag, isChecked: !tag.isChecked } : tag
+      ),
+    }));
   },
 }));
 

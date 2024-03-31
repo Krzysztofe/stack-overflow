@@ -4,7 +4,6 @@ import TableBodyElem from "./TableBodyElem";
 import TableHeadElem from "./TableHeadElem";
 import TablePaginationElem from "./TablePaginationElem";
 
-
 const TableContainerElem = () => {
   return (
     <TableContainer sx={{ padding: { xs: 1, sm: 0 } }}>

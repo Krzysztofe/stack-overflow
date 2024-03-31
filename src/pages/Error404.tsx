@@ -1,7 +1,7 @@
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 
-const ErrorPage = () => {
+const Error404 = () => {
   return (
     <Grid
       container
@@ -10,10 +10,10 @@ const ErrorPage = () => {
       style={{ height: "100vh" }}
     >
       <Box sx={{ textAlign: "center" }}>
-        Błąd 404 <br /> Szukana strona nie istnieje
+        Błąd 404 <br /> Strona nie istnieje
       </Box>
     </Grid>
   );
 };
 
-export default ErrorPage;
+export default Error404;

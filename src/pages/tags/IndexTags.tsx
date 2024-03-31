@@ -9,62 +9,77 @@ import useTagsListStore from "../../zustandStores/useTagsListStore";
 export const tagsToPrint: {
   tags: string[];
   counts: number | string;
+  isChecked: false;
 }[] = [
   {
     tags: ["javascript", "node.js", "prisma"],
-    counts: 22,
+    counts: 2222,
+    isChecked: false,
   },
   {
     tags: ["lua", "fivem"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["android", "android-studio", "github"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
-    tags: ["Brak danych"],
-    counts: "Brak danych",
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
+    tags: ["Brak"],
+    counts: "Brak",
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
   },
   {
     tags: ["c++", "sfml", "trigonometry"],
     counts: 22,
+    isChecked: false,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+    isChecked: false,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+    isChecked: false,
   },
 ];
 
