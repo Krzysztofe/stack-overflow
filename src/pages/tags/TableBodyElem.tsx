@@ -8,6 +8,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchTags } from "../../services/fetchTags";
 import { URL_tags } from "../../data/dataURL";
 import TableRowElem from "./TableRowElem";
+import useTagsTableStore from "../../zustandStores/useTagsTableStore";
 
 type TagsData = {
   items: {
@@ -16,7 +17,7 @@ type TagsData = {
   }[];
 };
 
-const tagsToPrint: {
+export const tagsToPrint: {
   tags: string[];
   counts: number | string;
 }[] = [
@@ -40,25 +41,56 @@ const tagsToPrint: {
     tags: ["Brak danych"],
     counts: "Brak danych",
   },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
+  {
+    tags: ["c++", "sfml", "trigonometry"],
+    counts: 22,
+  },
 ];
 
 const TableBodyElem = () => {
-  //   const { data: tags } = useQuery<TagsData>({
-  //     queryFn: () => fetchTags(URL_tags),
-  //     queryKey: ["tags"],
-  //     staleTime: Infinity,
-  //   });
+  const page = useTagsTableStore(state => state.page);
+  const rowsPerPage = useTagsTableStore(state => state.rowsPerPage);
 
-  //   const tagsToPrint = tags?.items.map(({ tags, view_count }) => {
-  //     const formattedTags = tags.length === 0 ? ["Brak danych"] : tags;
-  //     const formattedCount = view_count ? view_count : "Brak danych";
-  //     return { tags: formattedTags, counts: formattedCount };
-  //   });
+  const displayedTags = tagsToPrint?.slice(
+    page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage
+  );
 
-  //   console.log("www", tagsToPrint);
   return (
     <TableBody>
-      {tagsToPrint.map((tagData, idx) => {
+      {displayedTags.map((tagData, idx) => {
         return <TableRowElem key={Math.random()} tagData={tagData} idx={idx} />;
       })}
     </TableBody>
