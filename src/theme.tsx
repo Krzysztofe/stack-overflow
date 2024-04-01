@@ -1,42 +1,68 @@
 import { createTheme } from "@mui/material/styles";
 
+declare module "@mui/material/styles" {
+  interface TypographyVariants {
+    fs_small: {
+      fontSize: string;
+      [key: string]: any;
+    };
+    fs_primary: {
+      fontSize: string;
+      [key: string]: any;
+    };
+  }
+
+  interface TypographyVariantsOptions {
+    fs_small: {
+      fontSize: string;
+      [key: string]: any;
+    };
+    fs_primary: {
+      fontSize: string;
+      [key: string]: any;
+    };
+  }
+}
+
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    fs_small: true;
+    fs_primary: true;
+  }
+}
+
 export const theme = createTheme({
   palette: {
-    primary: { main: "#2569F4" },
-    secondary: {
-      main: "rgb(153,161,173)",
-      light: "#FAFAFA",
-    },
-    info: {
-      dark: "#3E3E3E",
-      main: "#797979",
-      light: "#E2E2E2",
-    },
+    primary: { main: "#F2F2F2", dark: "#99A1AD" },
   },
-
-  spacing: 10,
 
   typography: {
     fontFamily: ["Poppins", "sans-serif"].join(","),
 
-    h1: {
-      fontSize: "32px",
-      fontWeight: 500,
-    },
-
-    subtitle1: {
-      fontSize: "0.625rem",
+    fs_small: {
+      fontSize: "0.7rem",
       fontWeight: 600,
     },
+    fs_primary: {
+      fontSize: "0.7rem",
+      "@media (min-width:400px)": {
+        fontSize: "0.8rem",
+      },
+      "@media (min-width:600px)": {
+        fontSize: "1rem",
+      },
+    },
   },
-
-  breakpoints: {
-    values: {
-      xs: 0,
-      sm: 500,
-      md: 900,
-      lg: 1200,
-      xl: 1400,
+  components: {
+    MuiTableCell: {
+      styleOverrides: {
+        root: {
+          padding: "0.2rem",
+          "@media (min-width:500px)": {
+            padding: "0.5rem",
+          },
+        },
+      },
     },
   },
 });

@@ -2,6 +2,7 @@ import TableRow from "@mui/material/TableRow";
 import TableCell from "@mui/material/TableCell";
 import Checkbox from "@mui/material/Checkbox";
 import useTagsListStore from "../../zustandStores/useTagsListStore";
+import { useTheme } from "@mui/material/styles";
 
 type Props = {
   tagData: {
@@ -14,27 +15,39 @@ type Props = {
 
 const TableRowElem = (props: Props) => {
   const checkTags = useTagsListStore(state => state.checkTags);
-
+  const theme = useTheme();
   return (
     <TableRow
       sx={{
-        backgroundColor: props.tagData.isChecked ? "grey" : "transparent",
+        bgcolor: props.tagData.isChecked
+          ? "primary.dark"
+          : props.idx % 2 === 1
+          ? "primary.main"
+          : "transparent",
         cursor: "pointer",
+        fontSize: theme.typography.fs_primary,
       }}
       onClick={() => checkTags(props.idx)}
     >
       <TableCell>
         <Checkbox
           checked={props.tagData.isChecked}
-          onChange={() => checkTags(props.idx)}
           size="small"
           color="default"
-          sx = {{padding: "0"}}
+          sx={{
+            padding: "0",
+          }}
         />
       </TableCell>
-      <TableCell>{props.idx + 1}</TableCell>
-      <TableCell>{props.tagData.tags.join(", ")}</TableCell>
-      <TableCell>{props.tagData.counts}</TableCell>
+      <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
+        {props.idx + 1}
+      </TableCell>
+      <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
+        {props.tagData.tags.join(", ")}
+      </TableCell>
+      <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
+        {props.tagData.counts}
+      </TableCell>
     </TableRow>
   );
 };

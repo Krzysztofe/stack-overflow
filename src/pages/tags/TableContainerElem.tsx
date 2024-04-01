@@ -6,7 +6,7 @@ import TablePaginationElem from "./TablePaginationElem";
 
 const TableContainerElem = () => {
   return (
-    <TableContainer sx={{ padding: { xs: 1, sm: 0 } }}>
+    <TableContainer sx={{ mb: 1 }}>
       <TablePaginationElem />
       <Table aria-label="simple table">
         <TableHeadElem />

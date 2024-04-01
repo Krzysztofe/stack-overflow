@@ -7,7 +7,7 @@ const Error404 = () => {
       container
       justifyContent="center"
       alignItems="center"
-      style={{ height: "100vh" }}
+      sx={{ height: "100vh", color: "error.main" }}
     >
       <Box sx={{ textAlign: "center" }}>
         Błąd 404 <br /> Strona nie istnieje

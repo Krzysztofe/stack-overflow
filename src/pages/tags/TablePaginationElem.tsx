@@ -18,14 +18,13 @@ const TablePaginationElem = () => {
 
   const defaultLabelDisplayedRows = ({ from, to, count }: ModelRowsParams) => {
     return (
-      <Typography component="span">
+      <Typography component="span" variant="fs_small">
         {from}–{to} z {count !== -1 ? count : to}
       </Typography>
     );
   };
 
   return (
-    
     <TablePagination
       component="div"
       count={tags?.length ?? 0}
@@ -34,10 +33,20 @@ const TablePaginationElem = () => {
       rowsPerPage={rowsPerPage}
       onRowsPerPageChange={setRowsPerPage}
       labelRowsPerPage={
-        <Typography component="span">Liczba wpisów na stronie</Typography>
+        <Typography component="span" variant="fs_small">
+          Liczba wpisów na stronie
+        </Typography>
       }
       labelDisplayedRows={defaultLabelDisplayedRows}
       rowsPerPageOptions={[5, 10, 15]}
+      
+   
+      sx={{
+        "& .css-194a1fa-MuiSelect-select-MuiInputBase-input": {
+          fontSize: "0.7rem",
+        },
+        
+      }}
     />
   );
 };

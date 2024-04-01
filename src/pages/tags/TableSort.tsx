@@ -16,7 +16,8 @@ const TableSort = () => {
     <TableCell sx={{ cursor: "pointer" }}>
       <Typography
         component="span"
-        sx={{ display: "flex", alignItems: "center" }}
+        variant = "fs_primary"
+        sx={{ display: "flex", alignItems: "center", fontWeight: "600" }}
         onClick={handleSortClick}
       >
         Nr
@@ -24,6 +25,8 @@ const TableSort = () => {
           sx={{
             transform: rotate ? `rotate(180deg)` : `rotate(0deg)`,
             transition: "0.3s",
+            fontSize: "1rem",
+            color: "primary.dark"
           }}
         />
       </Typography>

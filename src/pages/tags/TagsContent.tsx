@@ -3,12 +3,18 @@ import TableContainerElem from "./TableContainerElem";
 
 const TagsContent = () => {
   return (
-    <Container
-      sx={{ display: "grid", placeItems: "center" }}
-      style={{ height: "100vh" }}
-    >
-      <TableContainerElem />
-    </Container>
+    <main>
+      <Container
+        sx={{
+          display: "grid",
+          placeItems: "center",
+          minHeight: "100vh",
+          color: "error.main",
+        }}
+      >
+        <TableContainerElem />
+      </Container>
+    </main>
   );
 };
 
