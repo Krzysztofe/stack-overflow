@@ -15,8 +15,8 @@ const TableBodyElem = () => {
 
   return (
     <TableBody>
-      {displayedTags.map((tagData: any, idx: number) => {
-        return <TableRowElem key={Math.random()} tagData={tagData} idx={idx} />;
+      {displayedTags?.map((tagData: any) => {
+        return <TableRowElem key={Math.random()} tagData={tagData} />;
       })}
     </TableBody>
   );

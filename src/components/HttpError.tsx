@@ -13,7 +13,9 @@ const HttpError = (props: Props) => {
       alignItems="center"
       style={{ height: "100vh" }}
     >
-      <Box sx={{ textAlign: "center" }}>{props.errorMsg.message} <br/> Spróbuj ponownie</Box>
+      <Box sx={{ textAlign: "center", color: "error.main" }}>
+        {props.errorMsg.message} <br /> Spróbuj ponownie
+      </Box>
     </Grid>
   );
 };

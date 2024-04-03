@@ -9,8 +9,8 @@ type Props = {
     tags: any[];
     counts: number | string;
     isChecked: boolean;
+    id:number
   };
-  idx: number;
 };
 
 const TableRowElem = (props: Props) => {
@@ -21,13 +21,13 @@ const TableRowElem = (props: Props) => {
       sx={{
         bgcolor: props.tagData.isChecked
           ? "primary.dark"
-          : props.idx % 2 === 1
+          : props.tagData.id % 2 === 1
           ? "primary.main"
           : "transparent",
         cursor: "pointer",
         fontSize: theme.typography.fs_primary,
       }}
-      onClick={() => checkTags(props.idx)}
+      onClick={() => checkTags(props.tagData.id)}
     >
       <TableCell>
         <Checkbox
@@ -40,7 +40,7 @@ const TableRowElem = (props: Props) => {
         />
       </TableCell>
       <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
-        {props.idx + 1}
+        {props.tagData.id}
       </TableCell>
       <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
         {props.tagData.tags.join(", ")}

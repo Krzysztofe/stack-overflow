@@ -23,7 +23,7 @@ const TableSort = () => {
         Nr
         <ArrowDownwardIcon
           sx={{
-            transform: rotate ? `rotate(180deg)` : `rotate(0deg)`,
+            transform: rotate ? `rotate(0deg)` : `rotate(180deg)`,
             transition: "0.3s",
             fontSize: "1rem",
             color: "primary.dark"

@@ -20,8 +20,8 @@ const useTagsListStore = create<ModelStore>(set => ({
   },
   checkTags: idx => {
     set(state => ({
-      tags: state.tags.map((tag: any, index: any) =>
-        index === idx ? { ...tag, isChecked: !tag.isChecked } : tag
+      tags: state.tags.map((tag: any) =>
+        idx === tag.id ? { ...tag, isChecked: !tag.isChecked } : tag
       ),
     }));
   },

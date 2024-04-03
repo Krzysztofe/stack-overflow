@@ -7,9 +7,9 @@ const LoadingPage = () => {
       container
       justifyContent="center"
       alignItems="center"
-      style={{ height: "100vh" }}
+      sx={{ height: "100vh" }}
     >
-      <CircularProgress />
+      <CircularProgress sx={{ color: "primary.dark" }} />
     </Grid>
   );
 };
