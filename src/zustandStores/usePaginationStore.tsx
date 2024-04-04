@@ -16,11 +16,11 @@ const usePaginationStore = create<ModelStore>(set => ({
   page: 0,
   rowsPerPage: 5,
   setRowsPerPage: event => {
-    set(state => ({ rowsPerPage: parseInt(event.target.value) }));
+    set({ rowsPerPage: parseInt(event.target.value) });
   },
   setPage: (event, newPage: number) => {
     const page = event ? newPage : 0;
-    set(state => ({ page: newPage }));
+    set({ page: page });
   },
 }));
 

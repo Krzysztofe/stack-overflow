@@ -12,7 +12,7 @@ const useTagsListStore = create<ModelStore>(set => ({
   tags: null,
 
   setTags: tagsList => {
-    set(state => ({ tags: tagsList }));
+    set({ tags: tagsList });
   },
 
   sortTags: () => {
@@ -20,6 +20,7 @@ const useTagsListStore = create<ModelStore>(set => ({
       tags: state.tags ? state.tags.slice().reverse() : null,
     }));
   },
+  
   checkTags: idx => {
     set(state => ({
       tags: state.tags
