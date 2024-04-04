@@ -3,14 +3,10 @@ import TableCell from "@mui/material/TableCell";
 import Checkbox from "@mui/material/Checkbox";
 import useTagsListStore from "../../zustandStores/useTagsListStore";
 import { useTheme } from "@mui/material/styles";
+import { ModelTagToPrint } from "../../sharedModels/modelTagToPrint";
 
 type Props = {
-  tagData: {
-    tags: any[];
-    counts: number | string;
-    isChecked: boolean;
-    id:number
-  };
+  tagData: ModelTagToPrint;
 };
 
 const TableRowElem = (props: Props) => {
@@ -22,8 +18,8 @@ const TableRowElem = (props: Props) => {
         bgcolor: props.tagData.isChecked
           ? "primary.dark"
           : props.tagData.id % 2 === 1
-          ? "primary.main"
-          : "transparent",
+            ? "primary.main"
+            : "transparent",
         cursor: "pointer",
         fontSize: theme.typography.fs_primary,
       }}
@@ -39,15 +35,17 @@ const TableRowElem = (props: Props) => {
           }}
         />
       </TableCell>
-      <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
-        {props.tagData.id}
-      </TableCell>
-      <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
-        {props.tagData.tags.join(", ")}
-      </TableCell>
-      <TableCell sx={{ fontSize: theme.typography.fs_primary }}>
-        {props.tagData.counts}
-      </TableCell>
+      {[
+        props.tagData.id,
+        props.tagData.tags.join(", "),
+        props.tagData.counts,
+      ].map(props => {
+        return (
+          <TableCell key = {Math.random()} sx={{ fontSize: theme.typography.fs_primary }}>
+            {props}
+          </TableCell>
+        );
+      })}
     </TableRow>
   );
 };

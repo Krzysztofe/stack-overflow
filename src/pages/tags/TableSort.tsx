@@ -1,5 +1,5 @@
 import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { Typography } from "@mui/material";
+import  Typography  from "@mui/material/Typography";
 import TableCell from "@mui/material/TableCell";
 import useTagsListStore from "../../zustandStores/useTagsListStore";
 import { useState } from "react";

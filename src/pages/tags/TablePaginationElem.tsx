@@ -39,13 +39,10 @@ const TablePaginationElem = () => {
       }
       labelDisplayedRows={defaultLabelDisplayedRows}
       rowsPerPageOptions={[5, 10, 15]}
-      
-   
       sx={{
         "& .css-194a1fa-MuiSelect-select-MuiInputBase-input": {
           fontSize: "0.7rem",
         },
-        
       }}
     />
   );

@@ -2,6 +2,8 @@ import TableBody from "@mui/material/TableBody";
 import usePaginationStore from "../../zustandStores/usePaginationStore";
 import useTagsListStore from "../../zustandStores/useTagsListStore";
 import TableRowElem from "./TableRowElem";
+import { ModelTagToPrint } from "../../sharedModels/modelTagToPrint";
+
 
 const TableBodyElem = () => {
   const page = usePaginationStore(state => state.page);
@@ -15,7 +17,7 @@ const TableBodyElem = () => {
 
   return (
     <TableBody>
-      {displayedTags?.map((tagData: any) => {
+      {displayedTags?.map((tagData: ModelTagToPrint) => {
         return <TableRowElem key={Math.random()} tagData={tagData} />;
       })}
     </TableBody>

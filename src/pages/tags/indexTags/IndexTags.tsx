@@ -6,13 +6,9 @@ import LoadingPage from "../../LodingPage";
 import TagsContent from "../TagsContent";
 import useTagsListStore from "../../../zustandStores/useTagsListStore";
 import { getTagsToPrint } from "./utilsIndexTags";
+import { ModelTagToPrint } from "../../../sharedModels/modelTagToPrint";
 
-export const tagsToPrint: {
-  tags: string[];
-  counts: number | string;
-  isChecked: false;
-  id: number;
-}[] = [
+export const tagsToPrint: ModelTagToPrint[] = [
   {
     tags: ["javascript", "node.js", "prisma"],
     counts: 2222,
@@ -99,35 +95,35 @@ export const tagsToPrint: {
   },
 ];
 
-type TagsData = {
+type ModelTags = {
   items: {
-    tags: any[];
+    tags: string[];
     view_count: number;
   }[];
 };
 
 const IndexTags = () => {
-  // const {
-  //   isLoading,
-  //   error,
-  //   data: tags,
-  // } = useQuery<TagsData>({
-  //   queryFn: () => fetchTags(URL_tags),
-  //   queryKey: ["tags"],
-  //   staleTime: Infinity,
-  // });
+  const {
+    isLoading,
+    error,
+    data: tags,
+  } = useQuery<ModelTags>({
+    queryFn: () => fetchTags(URL_tags),
+    queryKey: ["tags"],
+    staleTime: Infinity,
+  });
 
   const setTags = useTagsListStore(state => state.setTags);
 
-  // const tagsToPrint = getTagsToPrint(tags);
+  const tagsToPrint = getTagsToPrint(tags);
   setTags(tagsToPrint);
 
-  // if (isLoading) {
-  //   return <LoadingPage />;
-  // }
-  // if (error) {
-  //   return <HttpError errorMsg={error} />;
-  // }
+  if (isLoading) {
+    return <LoadingPage />;
+  }
+  if (error) {
+    return <HttpError errorMsg={error} />;
+  }
 
   return <TagsContent />;
 };
