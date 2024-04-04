@@ -7,6 +7,6 @@ export default {
   component: HttpError,
 };
 
-export const secondary = () => (
+export const Primary = () => (
   <HttpError errorMsg={new Error("An error occurred.")} />
 );

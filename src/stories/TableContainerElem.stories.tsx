@@ -1,5 +1,3 @@
-import * as React from "react";
-import { Meta } from "@storybook/react";
 import TableContainerElem from "../pages/tags/TableContainerElem";
 
 
@@ -8,4 +6,4 @@ export default {
   component: TableContainerElem,
 };
 
-export const primary = () => <TableContainerElem />;
+export const Primary = () => <TableContainerElem />;
