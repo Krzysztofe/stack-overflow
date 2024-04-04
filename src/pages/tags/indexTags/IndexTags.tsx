@@ -6,94 +6,6 @@ import LoadingPage from "../../LodingPage";
 import TagsContent from "../TagsContent";
 import useTagsListStore from "../../../zustandStores/useTagsListStore";
 import { getTagsToPrint } from "./utilsIndexTags";
-import { ModelTagToPrint } from "../../../sharedModels/modelTagToPrint";
-
-export const tagsToPrint: ModelTagToPrint[] = [
-  {
-    tags: ["javascript", "node.js", "prisma"],
-    counts: 2222,
-    isChecked: false,
-    id: 1,
-  },
-  {
-    tags: ["lua", "fivem"],
-    counts: 22,
-    isChecked: false,
-    id: 2,
-  },
-  {
-    tags: ["android", "android-studio", "github"],
-    counts: 22,
-    isChecked: false,
-    id: 3,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 4,
-  },
-  {
-    tags: ["Brak"],
-    counts: "Brak",
-    isChecked: false,
-    id: 5,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 6,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 7,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 8,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 9,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 10,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 11,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 12,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 13,
-  },
-  {
-    tags: ["c++", "sfml", "trigonometry"],
-    counts: 22,
-    isChecked: false,
-    id: 14,
-  },
-];
 
 type ModelTags = {
   items: {
@@ -113,6 +25,7 @@ const IndexTags = () => {
     staleTime: Infinity,
   });
 
+  console.log('',tags)
   const setTags = useTagsListStore(state => state.setTags);
 
   const tagsToPrint = getTagsToPrint(tags);
