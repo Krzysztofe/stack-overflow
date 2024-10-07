@@ -11,7 +11,7 @@ const queryClient = new QueryClient({
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <BrowserRouter basename="/stack-overflow">
         <Suspense fallback={<LoadingPage />}>
           <Routes>
             {dataRoutes.map(({ path, element }) => {
