@@ -25,7 +25,6 @@ const useTagsListStore = create<ModelStore>(set => ({
     set(state => ({
       tags: state.tags
         ? state.tags.map((tag: ModelTagToPrint) => {
-            console.log("", tag);
             if (tag !== null && idx === tag.id) {
               return { ...tag, isChecked: !tag.isChecked };
             }

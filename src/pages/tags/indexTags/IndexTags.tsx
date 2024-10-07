@@ -25,7 +25,6 @@ const IndexTags = () => {
     staleTime: Infinity,
   });
 
-  console.log('',tags)
   const setTags = useTagsListStore(state => state.setTags);
 
   const tagsToPrint = getTagsToPrint(tags);
