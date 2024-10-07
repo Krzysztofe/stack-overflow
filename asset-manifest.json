@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.js": "/stack-overflow/static/js/main.ec149778.js",
+    "static/js/633.febc0060.chunk.js": "/stack-overflow/static/js/633.febc0060.chunk.js",
+    "static/js/97.5f13a810.chunk.js": "/stack-overflow/static/js/97.5f13a810.chunk.js",
+    "static/js/953.b8113c3a.chunk.js": "/stack-overflow/static/js/953.b8113c3a.chunk.js",
+    "static/js/903.5869219f.chunk.js": "/stack-overflow/static/js/903.5869219f.chunk.js",
+    "static/js/944.e0c81aa8.chunk.js": "/stack-overflow/static/js/944.e0c81aa8.chunk.js",
+    "index.html": "/stack-overflow/index.html",
+    "main.ec149778.js.map": "/stack-overflow/static/js/main.ec149778.js.map",
+    "633.febc0060.chunk.js.map": "/stack-overflow/static/js/633.febc0060.chunk.js.map",
+    "97.5f13a810.chunk.js.map": "/stack-overflow/static/js/97.5f13a810.chunk.js.map",
+    "953.b8113c3a.chunk.js.map": "/stack-overflow/static/js/953.b8113c3a.chunk.js.map",
+    "903.5869219f.chunk.js.map": "/stack-overflow/static/js/903.5869219f.chunk.js.map",
+    "944.e0c81aa8.chunk.js.map": "/stack-overflow/static/js/944.e0c81aa8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.ec149778.js"
+  ]
+}
