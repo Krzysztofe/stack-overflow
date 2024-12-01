@@ -1,7 +1,7 @@
-[# stack-overflow
+# stack-overflow
 
 
-https://krzysztofe.github.io/breadcrumb
+https://krzysztofe.github.io/stack-overflow/
 
 * MUI
 * React, TypeScript
@@ -14,4 +14,3 @@ react-router-dom <br/>
 zustand, @tanstack/react-query,<br/>
 @mui/material
 
-](https://i.imgur.com/MKOfS3f.png)
